@@ -2,7 +2,8 @@
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file (if mongodb is not installed use atlas)
+To run this project, you will need to add the following environment variables to
+your .env file (if mongodb is not installed use atlas)
 
 `DB_URL:mongodb://localhost:27017/transactions`
 
@@ -24,7 +25,7 @@ Install dependencies
   npm install
 ```
 
-Compile 
+Compile
 
 ```bash
   npm run build
@@ -34,4 +35,10 @@ Start the server
 
 ```bash
   npm run start
+```
+
+Run tests
+
+```bash
+  npm run test
 ```
