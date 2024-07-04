@@ -35,38 +35,3 @@ Start the server
 ```bash
   npm run start
 ```## 
-
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/powrhouseofthecell/transactions
-```
-
-Go to the project directory
-
-```bash
-  cd transactions
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Compile 
-
-```bash
-  npm run build
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-
