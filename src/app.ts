@@ -13,9 +13,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Temp middleware for creating users
-//
-// app.use('/u', async (req, res, next) => {
+// app.use('/user', async (_req, res) => {
 //   await User.create({ user_name: 'Zuhaib' })
+//   res.status(201).json({
+//     message: 'user created'
+//   })
 // })
 
 app.use('/api/v1', router)

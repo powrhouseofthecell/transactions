@@ -33,7 +33,7 @@ export async function create_transaction_uc({ user_id, amount }: any) {
 }
 
 export async function create_deduction_uc({ user_id, amount }: any) {
-  if (!user_id || amount) {
+  if (!user_id || !amount) {
     throw new Error('user_id and amount are required')
   } else {
     const id = new mongoose.Types.ObjectId(user_id)
