@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import User from "./User";
 import Transaction from "./Transactions";
 
-
 export async function create_topup_uc({ user_id, amount }: any) {
   if (!user_id || !amount) {
     throw new Error('user_id and amount are required')

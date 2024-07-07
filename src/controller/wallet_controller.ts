@@ -1,13 +1,11 @@
-
 import { Request, Response } from 'express'
 import { create_deduction_uc, create_topup_uc, create_transaction_uc, get_balance_uc } from '../db'
 
-
 async function topup(req: Request, res: Response) {
-  const { user_id, amount } = req.body
-  const new_balance = await create_topup_uc({ user_id, amount })
-  const transaction_id = await create_transaction_uc({ user_id, amount })
   try {
+    const { user_id, amount } = req.body
+    const new_balance = await create_topup_uc({ user_id, amount })
+    const transaction_id = await create_transaction_uc({ user_id, amount })
     res.status(201).json({
       status: true,
       new_balance,
@@ -19,10 +17,10 @@ async function topup(req: Request, res: Response) {
 }
 
 async function deduct(req: Request, res: Response) {
-  const { user_id, amount } = req.body
-  const new_balance = await create_deduction_uc({ user_id, amount })
-  const transaction_id = await create_transaction_uc({ user_id, amount: amount - (2 * amount) })
   try {
+    const { user_id, amount } = req.body
+    const new_balance = await create_deduction_uc({ user_id, amount })
+    const transaction_id = await create_transaction_uc({ user_id, amount: amount - (2 * amount) })
     res.status(200).json({
       status: true,
       new_balance,
@@ -34,9 +32,9 @@ async function deduct(req: Request, res: Response) {
 }
 
 async function get_balance(req: Request, res: Response) {
-  const { user_id } = req.params
-  const balance = await get_balance_uc({ user_id })
   try {
+    const { user_id } = req.params
+    const balance = await get_balance_uc({ user_id })
     res.status(200).json({
       balance
     })
